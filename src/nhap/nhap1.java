@@ -1,13 +1,27 @@
 package nhap;
 
-public class nhap1 {
-    public static void main(String[] args) {
-        int a = 100;
-        m(a);
-        System.out.println(a);
-    }
 
-    static void m(int x) {
-        x = 200;
+class ChuNhat {
+    public int rong, dai;
+
+    public ChuNhat(int rong, int dai) {
+        this.rong = rong;
+        this.dai = dai;
     }
 }
+
+class MyClass {
+    void method(ChuNhat x) {
+        x.rong = 5;
+        x.dai = 5;
+    }
+
+    public static void main(String[] args) {
+        MyClass o = new MyClass();
+        ChuNhat cn = new ChuNhat(1, 1);
+        o.method(cn);
+        System.out.printf("x=%d, y=%d", cn.rong, cn.dai);
+    }
+}
+
+
