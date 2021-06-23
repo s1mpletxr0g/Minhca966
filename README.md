@@ -1,1 +1,0 @@
-# C0921G1-HUYNH-MINH-CA-module-2
