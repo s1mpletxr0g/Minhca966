@@ -26,7 +26,7 @@ protected Circle(int radius){
 
     public static void main(String[] args) {
         Circle O=new Circle(6);
-        System.out.println("ban kinh hinh tron " + O.getRadius()+" dien tic la "+ O.getArea()+ " mau "+ O.getColor());
+        System.out.println("ban kinh hinh tron " + O.getRadius()+" dien tich la "+ O.getArea()+ " mau "+ O.getColor());
     }
 }
 
