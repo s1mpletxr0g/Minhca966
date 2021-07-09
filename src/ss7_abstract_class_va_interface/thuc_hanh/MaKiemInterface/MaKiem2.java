@@ -1,8 +1,8 @@
-package ss7_abstract_class_va_interface.thuc_hanh.edible.MaKiemInterface;
+package ss7_abstract_class_va_interface.thuc_hanh.MaKiemInterface;
 
-import ss7_abstract_class_va_interface.thuc_hanh.edible.fruit.Apple;
-import ss7_abstract_class_va_interface.thuc_hanh.edible.fruit.Fruit;
-import ss7_abstract_class_va_interface.thuc_hanh.edible.fruit.Orange;
+import ss7_abstract_class_va_interface.thuc_hanh.fruit.Apple;
+import ss7_abstract_class_va_interface.thuc_hanh.fruit.Fruit;
+import ss7_abstract_class_va_interface.thuc_hanh.fruit.Orange;
 
 public class MaKiem2 {
     public static void main(String[] args) {

@@ -5,8 +5,8 @@ import org.w3c.dom.ls.LSOutput;
 import javax.crypto.spec.PSource;
 
 public class Point {
-    private float x;
-    private float y;
+    protected float x;
+    protected float y;
     protected Point(){
 
     }

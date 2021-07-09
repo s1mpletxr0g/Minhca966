@@ -1,19 +1,19 @@
 package ss6_ke_thua.thuc_hanh;
 
 public class Circle extends Shape {
-    private int radius=1;
-    protected Circle(){
+    private double radius=1;
+    public Circle(){
 
     }
-    public Circle(int radius){
+    public Circle(double radius){
 
     }
-    public Circle(int radius,String color,boolean filled){
+    public Circle(double radius,String color,boolean filled){
         super(color,filled);
         this.radius=radius;
     }
 
-    public int getRadius() {
+    public double getRadius() {
         return radius;
     }
     public double getArea(){

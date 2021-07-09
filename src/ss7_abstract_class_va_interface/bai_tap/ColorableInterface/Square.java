@@ -1,11 +1,14 @@
-package ss7_abstract_class_va_interface.bai_tap;
+package ss7_abstract_class_va_interface.bai_tap.ColorableInterface;
 
-public class Square extends Shape implements Resizeable implements Co {
+import ss7_abstract_class_va_interface.bai_tap.Resizeable;
+import ss7_abstract_class_va_interface.bai_tap.Shape;
+
+public class Square extends Shape implements Colorable  {
     double length=1.0;
     protected Square(){
 
     }
-    public Square(String color,boolean filled){
+    public Square(String color, boolean filled){
         super(color, filled);
     }
     public Square(String color, boolean filled, double length){
@@ -57,5 +60,10 @@ public class Square extends Shape implements Resizeable implements Co {
     @Override
     public void resize(double percent) {
 
+    }
+
+    @Override
+    public void howToColor() {
+        System.out.println("Color all four sides..");
     }
 }

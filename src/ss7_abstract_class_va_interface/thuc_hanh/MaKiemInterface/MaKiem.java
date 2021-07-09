@@ -1,9 +1,9 @@
-package ss7_abstract_class_va_interface.thuc_hanh.edible.MaKiemInterface;
+package ss7_abstract_class_va_interface.thuc_hanh.MaKiemInterface;
 
-import ss7_abstract_class_va_interface.thuc_hanh.edible.animal.Animal;
-import ss7_abstract_class_va_interface.thuc_hanh.edible.animal.Chicken;
-import ss7_abstract_class_va_interface.thuc_hanh.edible.animal.Tiger;
-import ss7_abstract_class_va_interface.thuc_hanh.edible.Edible;
+import ss7_abstract_class_va_interface.thuc_hanh.Edible;
+import ss7_abstract_class_va_interface.thuc_hanh.animal.Animal;
+import ss7_abstract_class_va_interface.thuc_hanh.animal.Chicken;
+import ss7_abstract_class_va_interface.thuc_hanh.animal.Tiger;
 
 public class MaKiem {
     public static void main(String[] args) {
