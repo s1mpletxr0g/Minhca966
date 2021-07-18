@@ -5,18 +5,19 @@ import java.util.Scanner;
 
 public class XeMay extends PoliceStriss {
     private String soChoNgoi;
-    private double trongTai;
+    private String trongTai;
     private String congSuat;
 
     public XeMay() {
     }
 
-    public XeMay(String bKS, String tenHang, int namSX, String chuSoHuu, String soChoNgoi, double trongTai, String congSuat) {
+    public XeMay(String bKS, String tenHang, int namSX, String chuSoHuu, String soChoNgoi, String trongTai, String congSuat) {
         super(bKS, tenHang, namSX, chuSoHuu);
         this.soChoNgoi = soChoNgoi;
         this.trongTai = trongTai;
         this.congSuat = congSuat;
     }
+
 
     public String getSoChoNgoi() {
         return soChoNgoi;
@@ -26,11 +27,11 @@ public class XeMay extends PoliceStriss {
         this.soChoNgoi = soChoNgoi;
     }
 
-    public double getTrongTai() {
+    public String getTrongTai() {
         return trongTai;
     }
 
-    public void setTrongTai(double trongTai) {
+    public void setTrongTai(String trongTai) {
         this.trongTai = trongTai;
     }
 
@@ -45,8 +46,8 @@ public class XeMay extends PoliceStriss {
 
     @Override
     public String toString() {
-        return " bKS," + getbKS() + " tenHang, " + getTenHang() + " namSX," + getNamSX() + " chuSoHuu, " +
-                getChuSoHuu() + " soChoNgoi, " + getSoChoNgoi() + " trongTai," + getTrongTai() + " congSuat " + getCongSuat();
+        return " bKS: " + getbKS() + ", tenHang: " + getTenHang() + ", namSX: " + getNamSX() + ", chuSoHuu: " +
+                getChuSoHuu() + ", soChoNgoi: " + getSoChoNgoi() + ", trongTai: " + getTrongTai() + ", congSuat: " + getCongSuat();
     }
 
 
@@ -67,7 +68,7 @@ public class XeMay extends PoliceStriss {
         System.out.println(" mời nhập số chổ ngồi của xe");
         String soChoNgoi = scanner.nextLine();
         System.out.println(" mời nhập trọng tải xe");
-        double trongTai = scanner.nextFloat();
+        String trongTai = scanner.nextLine();
         System.out.println("mời nhập công suất");
         String congSuat = scanner.nextLine();
         XeMay xeMay = new XeMay(bKS, tenHang, namXS, chuSoHuu, soChoNgoi, trongTai, congSuat);
@@ -82,7 +83,7 @@ public class XeMay extends PoliceStriss {
     public void edit() {
         Scanner scanner = new Scanner(System.in);
         System.out.println(" mời nhập id xe cần edit ");
-        int id = scanner.nextInt();
+        int id = Integer.parseInt(scanner.nextLine());
         boolean flag=true;
         for (int i = 0; i < arr1.size(); i++) {
             if (id == i) {
@@ -97,7 +98,7 @@ public class XeMay extends PoliceStriss {
                 System.out.println(" mời nhập số chổ ngồi của xe");
                 String soChoNgoi = scanner.nextLine();
                 System.out.println(" mời nhập trọng tải xe");
-                double trongTai = scanner.nextFloat();
+                String trongTai = scanner.nextLine();
                 System.out.println("mời nhập công suất");
                 String congSuat = scanner.nextLine();
                 arr1.get(i).setbKS(bKS);
@@ -129,6 +130,8 @@ public class XeMay extends PoliceStriss {
         for( int i=0; i<arr1.size();i++){
             if(id==i){
                 arr1.remove(i);
+                for(XeMay xeMay: arr1)
+                System.out.println(xeMay);
             }
         }
 
