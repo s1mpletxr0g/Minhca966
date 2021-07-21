@@ -43,7 +43,7 @@ public class Main {
             System.out.println(student);
         }
         Collections.sort(studentList,new CompaAge());
-        System.out.println("sau khi sắp xếp theo tên");
+        System.out.println("sau khi sắp xếp theo tuổi");
         for (Student student: studentList) {
             System.out.println(student);
         }
