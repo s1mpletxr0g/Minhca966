@@ -1,4 +1,4 @@
-package cong_an_giao_thong_den;
+package police_streets;
 
 import java.util.Scanner;
 

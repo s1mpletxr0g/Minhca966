@@ -1,15 +1,15 @@
-package cong_an_giao_thong_den;
+package police_streets;
 
-public abstract  class PoliceStriss implements Interface {
+public abstract  class PoliceStreets implements Interface {
     private String bKS;
     private String tenHang;
     private int namSX;
     private String chuSoHuu;
 
-    public PoliceStriss() {
+    public PoliceStreets() {
     }
 
-    public PoliceStriss(String bKS, String tenHang, int namSX, String chuSoHuu) {
+    public PoliceStreets(String bKS, String tenHang, int namSX, String chuSoHuu) {
         this.bKS = bKS;
         this.tenHang = tenHang;
         this.namSX = namSX;

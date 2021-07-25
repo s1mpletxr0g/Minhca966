@@ -14,6 +14,7 @@ public class Main {
         System.out.println(" chọn 3: xóa sản phẩm ");
         System.out.println(" chọn 4: tìm sản phẩm");
         System.out.println(" chọn 5: sắp xép giá sản phẩm theo chiều tăng dần");
+            System.out.println(" chọn 6: để thoát chương trình ");
         Scanner scanner=new Scanner(System.in);
 
         choise=scanner.nextInt();
