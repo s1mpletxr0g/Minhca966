@@ -11,8 +11,8 @@ public class Triagle {
     }
 
     public Triagle(int a, int b, int c) throws ExceptionRectangle  {
-        if( a<=0 || b<=0 || c<=0 || (a+b)<c  || (b+c)<a || (c+a)<b ){
-           throw new ExceptionRectangle();
+        if( a<=0 || b<=0 || c<=0 || (a+b)<c  || (b+c)<a || (c+a)<b ) {
+            throw new ExceptionRectangle();
         }
 
         this.a = a;

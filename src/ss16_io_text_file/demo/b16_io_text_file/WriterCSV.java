@@ -5,7 +5,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class WriterCSV {
-    public static final String PATH_SOURCE_FILE = "D:\\WORKSPACE\\DEMO_CODEGYM\\module02\\Demo-C0921G1\\src\\b16_io_text_file\\demo.csv";
+    public static final String PATH_SOURCE_FILE = "D:\\up_git\\ca\\src\\ss16_io_text_file\\demo\\b16_io_text_file\\demo.csv";
 
     public static List<Country> readCSV() {
         List<Country> countryList = new ArrayList<>();
@@ -62,8 +62,10 @@ public class WriterCSV {
         countries.add(new Country(3, "Japan", "JP"));
         try {
             writeCSV(countries);
+
         } catch (IOException e) {
             e.printStackTrace();
         }
     }
+
 }

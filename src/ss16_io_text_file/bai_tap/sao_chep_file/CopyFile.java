@@ -1,10 +1,10 @@
-package ss16_io_text_file.demo.b16_io_text_file;
+package ss16_io_text_file.bai_tap.sao_chep_file;
 
 import java.io.*;
 
 public class CopyFile {
-    public static final String PATH_SOURCE_FILE = "D:\\up_git\\ca\\src\\ss16_io_text_file\\demo\\b16_io_text_file\\demo.csv";
-    public static final String PATH_TARGET_FILE = "D:\\up_git\\ca\\src\\ss16_io_text_file\\demo\\b16_io_text_file\\target.csv";
+    public static final String PATH_SOURCE_FILE = "ss16_io_text_file\\bai_tap\\sao_chep_file\\test.csv";
+    public static final String PATH_TARGET_FILE = "ss16_io_text_file\\bai_tap\\sao_chep_file\\target.csv";
 
     //Bước 1: đọc được nội dung của source file
     public static String readFile(FileReader fileReader) {

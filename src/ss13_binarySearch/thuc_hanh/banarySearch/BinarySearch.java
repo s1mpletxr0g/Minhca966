@@ -21,7 +21,7 @@ public  class BinarySearch {
     }
         public static void main (String[]args){
 
-            System.out.println(binarySearch(list, 10));
+            System.out.println(binarySearch(list, 132));
             System.out.println(binarySearch(list, 12));
             System.out.println(binarySearch(list, 16));
             System.out.println(binarySearch(list, 23));
