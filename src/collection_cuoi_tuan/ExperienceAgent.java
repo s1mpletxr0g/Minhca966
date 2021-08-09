@@ -36,6 +36,7 @@ public class ExperienceAgent extends Agent{
     public void setProSkill(String proSkill) {
         this.proSkill = proSkill;
     }
+
     ArrayList<ExperienceAgent> list1= new ArrayList<>();
 
 
@@ -81,6 +82,7 @@ public class ExperienceAgent extends Agent{
                 String address=scanner.nextLine();
                 System.out.println(" mời nhập đị chỉ mail ");
                 String mail=scanner.nextLine();
+                System.out.println("mời nhập số năm kinh ngiệm ");
                 int expInYear=Integer.parseInt(scanner.nextLine());
                 System.out.println("mời nhập kỹ năng ");
                 String proSkill=scanner.nextLine();
