@@ -5,7 +5,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class WriterCSV {
-    public static final String PATH_SOURCE_FILE = "D:\\up_git\\ca\\src\\ss16_io_text_file\\demo\\b16_io_text_file\\demo.csv";
+    public static final String PATH_SOURCE_FILE = "D:\\up_git\\ca\\src\\ss16_io_text_file\\demo\\b16_io_text_file\\write.csv";
 
     public static List<Country> readCSV() {
         List<Country> countryList = new ArrayList<>();
