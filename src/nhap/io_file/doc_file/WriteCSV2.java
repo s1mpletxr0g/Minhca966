@@ -1,4 +1,4 @@
-package nhap.nhap4.doc_file;
+package nhap.io_file.doc_file;
 
 import java.io.File;
 import java.io.IOException;

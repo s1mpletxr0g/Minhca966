@@ -1,4 +1,4 @@
-package nhap.nhap2;
+package nhap.object_student_1;
 
 public class Student extends Validate{
     private String name;

@@ -1,4 +1,4 @@
-package nhap.nhap4.phuong_thuc_doc_va_coppy_file;
+package nhap.io_file.phuong_thuc_doc_va_coppy_file;
 
 import java.io.*;
 
@@ -42,8 +42,8 @@ public class CoppyFile {
     }
     //test thử:
     public static void main(String[] args) {
-        File file=new File("D:\\up_git\\ca\\src\\nhap\\nhap4\\phuong_thuc_doc_va_coppy_file\\file.txt");
-        File file1=new File("D:\\up_git\\ca\\src\\nhap\\nhap4\\phuong_thuc_doc_va_coppy_file\\ketqua.txt");
+        File file=new File("D:\\up_git\\ca\\src\\nhap\\io_file\\phuong_thuc_doc_va_coppy_file\\file.txt");
+        File file1=new File("D:\\up_git\\ca\\src\\nhap\\io_file\\phuong_thuc_doc_va_coppy_file\\ketqua.txt");
         String result;
         try{
             FileReader fileReader=new FileReader(file);

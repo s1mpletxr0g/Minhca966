@@ -1,4 +1,4 @@
-package nhap.nhap2;
+package nhap.object_student_1;
 import java.util.List;
 public interface Vali  {
     public void add(List<Student> list);

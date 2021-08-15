@@ -1,4 +1,4 @@
-package nhap.nhap3;
+package nhap.object_student;
 
 import java.util.ArrayList;
 import java.util.Scanner;

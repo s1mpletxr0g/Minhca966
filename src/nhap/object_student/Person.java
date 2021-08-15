@@ -1,4 +1,4 @@
-package nhap.nhap3;
+package nhap.object_student;
 
 public  abstract  class Person implements Interface{
     public String name;

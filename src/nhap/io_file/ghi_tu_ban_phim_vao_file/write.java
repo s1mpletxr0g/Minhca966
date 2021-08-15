@@ -1,4 +1,4 @@
-package nhap.nhap4.ghi_tu_ban_phim_vao_file;
+package nhap.io_file.ghi_tu_ban_phim_vao_file;
 
 
 import java.io.BufferedWriter;

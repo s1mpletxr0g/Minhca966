@@ -1,4 +1,4 @@
-package nhap.nhap1;
+package nhap.bubble_sort;
 
 public  class BubbleSort {
     public static void bubble(int [] arr){
