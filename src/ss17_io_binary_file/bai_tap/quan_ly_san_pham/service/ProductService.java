@@ -38,15 +38,24 @@ public class ProductService  {
     }
 
 
-    public void search() {
+//    public void search() {
+//        Scanner scanner= new Scanner(System.in);
+//        System.out.println(" moi nhap id san pham ");
+//        String id=scanner.nextLine();
+//        for(Product product: list){
+//            if(id.equals(product.getId())){
+//                System.out.println(product);
+//
+//            }
+            public void search() {
         Scanner scanner= new Scanner(System.in);
-        System.out.println(" moi nhap id san pham ");
-        String id=scanner.nextLine();
-        for(Product product: list){
-            if(id.equals(product.getId())){
-                System.out.println(product);
+        System.out.println(" moi nhap ten sp muon tim kiem");
+        String name=scanner.nextLine();
+       for(Product product: list){
+           if(product.getName().contains(name)){
+               System.out.println(product);
+           }
 
-            }
         }
 
     }

@@ -15,7 +15,8 @@ public class Menu {
             System.out.println("Please choice:\n" +
                     "1. Add \n" +
                     "2. Display \n" +
-                    "3. Exit");
+                    "3. search \n "+
+                    "4. Exit");
             choice = Integer.parseInt(scanner.nextLine());
             switch (choice){
                 case 1:
@@ -25,9 +26,9 @@ public class Menu {
                    productService .display();
                     break;
                 case 3:
-                    System.exit(0);
-                case 4:
                     productService.search();
+                case 4:
+                default:
             }
         }
     }
