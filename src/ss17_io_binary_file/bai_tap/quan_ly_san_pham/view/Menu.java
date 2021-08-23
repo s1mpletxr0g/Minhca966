@@ -11,12 +11,12 @@ public class Menu {
     ProductService productService= new ProductService();
     public void menu() {
         int choice;
-        while (true) {
-            System.out.println("Please choice:\n" +
-                    "1. Add \n" +
-                    "2. Display \n" +
+        do{
+            System.out.println("Please choice:\n " +
+                    "1. Add \n " +
+                    "2. Display \n " +
                     "3. search \n "+
-                    "4. Exit");
+                    "4. Exit ");
             choice = Integer.parseInt(scanner.nextLine());
             switch (choice){
                 case 1:
@@ -27,9 +27,7 @@ public class Menu {
                     break;
                 case 3:
                     productService.search();
-                case 4:
-                default:
             }
-        }
+        }while (choice!=4);
     }
 }

@@ -37,7 +37,7 @@ public class Fresher extends Agent {
         this.graduationRank = graduationRank;
     }
 
-    ArrayList<Fresher> list2 = new ArrayList<>();
+     ArrayList<Fresher> list2 = new ArrayList<>();
 
     @Override
     public void add() {
@@ -129,7 +129,15 @@ public class Fresher extends Agent {
         }
 
     }
+    @Override
+    public void writeFile() {
 
+    }
+
+    @Override
+    public void readFile() {
+
+    }
 
     @Override
     public String toString() {
@@ -138,4 +146,5 @@ public class Fresher extends Agent {
                 ", graduationRank='" + graduationRank + '\'' +
                 '}';
     }
+
 }

@@ -1,3 +1,2 @@
-Id=1, name='Việt Nam', code='Vn'
-Id=1, name='Lào', code='L'
-Id=1, name='Thailand', code='TL'
+id=1, name=' viet nam', code=' vn'
+id=2, name=' lào', code='l'

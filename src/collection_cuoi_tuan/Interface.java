@@ -5,4 +5,6 @@ public interface Interface {
     void edit();
     void remove();
     void search();
+    void writeFile();
+    void readFile();
 }

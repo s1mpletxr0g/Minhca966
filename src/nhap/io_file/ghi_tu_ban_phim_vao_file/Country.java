@@ -1,25 +1,25 @@
 package nhap.io_file.ghi_tu_ban_phim_vao_file;
 
 public class Country {
-    private int Id;
-    private String name;
+    private int id;
+    private String  name;
     private  String code;
 
     public Country() {
     }
 
     public Country(int id, String name, String code) {
-        Id = id;
+        this.id = id;
         this.name = name;
         this.code = code;
     }
 
     public int getId() {
-        return Id;
+        return id;
     }
 
     public void setId(int id) {
-        Id = id;
+        this.id = id;
     }
 
     public String getName() {
@@ -41,8 +41,9 @@ public class Country {
     @Override
     public String toString() {
         return
-                "Id=" + Id +
+                "id=" + id +
                 ", name='" + name + '\'' +
                 ", code='" + code + '\'' ;
+
     }
 }

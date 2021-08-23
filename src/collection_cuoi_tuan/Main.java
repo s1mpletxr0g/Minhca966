@@ -6,8 +6,10 @@ import java.util.Scanner;
 
 public class Main {
     public static void main(String[] args) {
+
         ExperienceAgent experienceAgent = new ExperienceAgent();
-        Fresher fresher = new Fresher();
+         Fresher fresher = new Fresher();
+
         PracticeStudent practiceStudent = new PracticeStudent();
         int choise;
         do {

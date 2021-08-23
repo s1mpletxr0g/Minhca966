@@ -44,11 +44,11 @@ public class Product implements Serializable {
         this.company = company;
     }
 
-    public int getPrica() {
+    public int getPrice() {
         return price;
     }
 
-    public void setPrica(int prica) {
+    public void setPrice(int prica) {
         this.price = prica;
     }
 

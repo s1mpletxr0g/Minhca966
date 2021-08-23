@@ -1,5 +1,10 @@
 package collection_cuoi_tuan;
 
+import sun.nio.cs.StandardCharsets;
+
+import java.io.BufferedWriter;
+import java.io.File;
+import java.nio.file.Files;
 import java.util.ArrayList;
 import java.util.Scanner;
 
@@ -37,7 +42,9 @@ public class ExperienceAgent extends Agent{
         this.proSkill = proSkill;
     }
 
+
     ArrayList<ExperienceAgent> list1= new ArrayList<>();
+
 
 
     @Override
@@ -129,6 +136,30 @@ public class ExperienceAgent extends Agent{
             }
         }
     }
+
+    @Override
+    public void writeFile() {
+
+    }
+
+    @Override
+    public void readFile() {
+
+    }
+
+//    @Override
+//    public void writeFile() {
+////        File file =new File("D:\\up_git\\ca\\src\\collection_cuoi_tuan\\ExperienceAgent.CSV");
+////        BufferedWriter bufferedWriter=null;
+////        bufferedWriter= Files.newBufferedWriter(file.toPath(),StandardCharsets.U)
+//
+//
+//    }
+//
+//    @Override
+//    public void readFile() {
+//
+//    }
 
     @Override
     public String toString() {

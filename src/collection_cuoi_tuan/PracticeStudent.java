@@ -149,6 +149,26 @@ public class PracticeStudent extends Agent {
     }
 
     @Override
+    public void writeFile() {
+
+    }
+
+    @Override
+    public void readFile() {
+
+    }
+
+//    @Override
+//    public void writeFile() {
+//
+//    }
+//
+//    @Override
+//    public void readFile() {
+//
+//    }
+
+    @Override
     public String toString() {
         return "PracticeStudent{ " +super.toString()+
                 " majors=' " + majors + '\'' +

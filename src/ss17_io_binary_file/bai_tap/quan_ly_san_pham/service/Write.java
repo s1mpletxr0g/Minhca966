@@ -8,8 +8,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class Write {
-    static final String PATH_FILE = "D:\\code_gym\\ca\\C0921G1_HuynhMinhCa_Module2\\" +
-            "src\\ss17_io_binary_file\\bai_tap\\quan_ly_san_pham\\view\\test.txt";
+    static final String PATH_FILE = "D:\\up_git\\ca\\src\\ss17_io_binary_file\\bai_tap\\quan_ly_san_pham\\view\\test.txt";
 
     public static List<Product> readFile() {
         File file = new File(PATH_FILE);
