@@ -1,4 +1,0 @@
- FileReader fileReader = new FileReader(fileSource);
-            FileWriter fileWriter = new FileWriter(fileTarget);
-            result = readFile(fileReader);
-            writeFile(fileWriter, result);
