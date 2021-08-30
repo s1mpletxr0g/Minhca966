@@ -9,6 +9,7 @@ import case_study_furama.service.impl.FacilityService;
 import java.util.*;
 
 public class FacilityServiceimpl implements FacilityService {
+
      static Map<Room,Integer> mapRoom= new LinkedHashMap<>();
     static {
         mapRoom.put(new Room("phong 1", 20.0, 500 ,3, " ngay", "chich"),1);
@@ -79,7 +80,7 @@ public class FacilityServiceimpl implements FacilityService {
     @Override
     public void displayRoom() {
         for (Map.Entry<Room,Integer> map: mapRoom.entrySet()){
-            System.out.println(map);
+            System.out.println(map.toString());
         }
 
     }
@@ -150,7 +151,7 @@ public class FacilityServiceimpl implements FacilityService {
     @Override
     public void displayHouse() {
         for(Map.Entry<House,Integer> map: mapHouse.entrySet()){
-            System.out.println(map);
+            System.out.println(map.toString());
         }
 
     }
@@ -227,8 +228,17 @@ public class FacilityServiceimpl implements FacilityService {
     @Override
     public void displayVila() {
         for(Map.Entry<Vila,Integer> map: mapVila.entrySet()){
-            System.out.println(map);
+            System.out.println(map.toString());
         }
 
+    }
+
+    @Override
+    public void displayAll() {
+        displayRoom();
+        System.out.println("*********");
+        displayHouse();
+        System.out.println("*********");
+        displayVila();
     }
 }

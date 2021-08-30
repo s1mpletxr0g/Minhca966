@@ -85,19 +85,60 @@ public class Menu {
                         choise3 = Integer.parseInt(scanner.nextLine());
                         switch (choise3) {
                             case 1:
-                                System.out.println(
-                                        "1.displayroom" +"\n"
-                                        +" 2.displayhouse"+" \n"+
-                                        "3.displayVilla"+" \n"+
-                                        " 4.exit");
+                                int choise3Display1;
+                               do {
+                                   System.out.println(
+                                                   "1.displayroom" + "\n" +
+                                                   " 2.displayhouse" + " \n" +
+                                                   "3.displayVilla" + " \n" +
+                                                   "4. display All"+ "\n"+
+                                                   " 5.exit");
+                                   System.out.println(" moi chon hien thi");
+                                    choise3Display1 = Integer.parseInt(scanner.nextLine());
+                                   switch (choise3Display1) {
+                                       case 1:
+                                           facilityServiceimpl.displayRoom();
+                                           break;
+                                       case 2:
+                                           facilityServiceimpl.displayHouse();
+                                           break;
+                                       case 3:
+                                           facilityServiceimpl.displayVila();
+                                           break;
+                                       case 4: facilityServiceimpl.displayAll();
+                                       break;
+
+                                   }
+                               }while (choise3Display1!=5);
 
 
                                 break;
                             case 2:
-                                facilityServiceimpl.addRoom();
+                                int choise3Display2;
+                                do{
+                                System.out.println(
+                                        " 1. add() Room"+
+                                        " 2.add() House"+
+                                        " 3. add() Vila"+
+                                        "4. Exit");
+                                System.out.println(" moi chon dich vu them vao");
+                                choise3Display2 = Integer.parseInt(scanner.nextLine());
+                                switch (choise3Display2) {
+                                    case 1:
+                                        facilityServiceimpl.addRoom();
+                                        break;
+                                    case 2:
+                                        facilityServiceimpl.addHouse();
+                                        break;
+                                    case 3:
+                                        facilityServiceimpl.addVila();
+                                        break;
+                                }
+                        }while (choise3Display2!=4);
+
                                 break;
                             case 3:
-                                System.out.println("3\tDisplay list facility maintenance\n");
+                                System.out.println("3\tDisplay list facility maintenance\n chua lam" );
                                 break;
                         }
                     } while (choise3 != 4);
@@ -136,16 +177,18 @@ public class Menu {
                     int choise5;
                     do {
                         System.out.println(
-                                "1.\tDisplay list customers use service\n" +
+                                        "1.\tDisplay list customers use service\n" +
                                         "2.\tDisplay list customers get voucher\n" +
                                         "3.\tReturn main menu\n");
                         choise5 = Integer.parseInt(scanner.nextLine());
                         switch (choise5) {
                             case 1:
                                 System.out.println("1.\tDisplay list customers use service\n");
+                                customerService.display();
                                 break;
                             case 2:
                                 System.out.println("2.\tDisplay list customers get voucher\n");
+                                customerService.add();
                                 break;
                         }
                     } while (choise5 != 3);

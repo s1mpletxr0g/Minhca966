@@ -8,9 +8,11 @@ import java.util.List;
 import java.util.Scanner;
 
 public class EmployeeServiceImpl implements EmployeeService {
-    List<Employee> list = new ArrayList<>();
-
-    @Override
+   static List<Employee> list = new ArrayList<>();
+   static {
+       list.add(new Employee("1", " minh ca", 1996, "nam", "206001637","0823202011","huynhminhca191"," dai hoc","quan ly",15000));
+   }
+   @Override
     public void add() {
         Scanner scanner = new Scanner(System.in);
         System.out.println(" moi nhap id nhan vien");
@@ -46,6 +48,7 @@ public class EmployeeServiceImpl implements EmployeeService {
         String id = scanner.nextLine();
         for (int i=0; i<list.size();i++) {
             if (list.get(i).getId().contains(id)) {
+                System.out.println(" moi nhap thong tin moi cua nhan vien");
                     System.out.println(" moi nhap id nhan vien");
                     id = scanner.nextLine();
                     System.out.println(" moi nhap ten nhan vien");
@@ -98,7 +101,7 @@ public class EmployeeServiceImpl implements EmployeeService {
     @Override
     public void display() {
         for (Employee employee : list) {
-            System.out.println(employee);
+            System.out.println(employee.toString());
         }
 
     }

@@ -13,6 +13,7 @@ public interface FacilityService  {
     void editVila();
     void remoteVila();
     void displayVila();
+    void displayAll();
 
 
 }
