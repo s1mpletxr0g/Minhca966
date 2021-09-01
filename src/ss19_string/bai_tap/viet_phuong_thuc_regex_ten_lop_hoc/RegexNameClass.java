@@ -17,7 +17,7 @@ public class RegexNameClass {
         Scanner scanner= new Scanner(System.in);
         System.out.println(" moi nhap ten lop");
         String name= scanner.nextLine();
-        Pattern pattern=Pattern.compile("^([A|C|P])([\\d]){4}([G-M])$");
+        Pattern pattern=Pattern.compile("^[A|C|P][\\d]{4}[G-M]$");
         Matcher m=pattern.matcher(name);
         System.out.println(m.matches());
 

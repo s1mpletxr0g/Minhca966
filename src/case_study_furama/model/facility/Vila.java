@@ -16,8 +16,8 @@ public class Vila extends Facility {
         this.numFloors = numFloors;
     }
 
-    public Vila(String nameService, double area, int spend, int numberPeople, String styleEngage,  String rankRoom, double areaSwim, int numFloors) {
-        super(nameService, area, spend, numberPeople, styleEngage);
+    public Vila(String idService, String nameService, double area, int spend, int numberPeople, String styleEngage, String rankRoom, double areaSwim, int numFloors) {
+        super(idService, nameService, area, spend, numberPeople, styleEngage);
         this.rankRoom = rankRoom;
         this.areaSwim = areaSwim;
         this.numFloors = numFloors;
@@ -49,11 +49,10 @@ public class Vila extends Facility {
 
     @Override
     public String toString() {
-        return super.toString()+
+        return super.toString() +
                 "rankRoom='" + rankRoom + '\'' +
                 ", areaSwim=" + areaSwim +
-                ", numFloors=" + numFloors ;
+                ", numFloors=" + numFloors +
+                '}';
     }
-
-
 }

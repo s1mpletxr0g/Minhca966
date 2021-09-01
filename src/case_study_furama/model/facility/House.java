@@ -12,9 +12,8 @@ public class House extends Facility{
         this.numFloors = numFloors;
     }
 
-    public House(String nameService, double area, int spend, int numberPeople, String styleEngage,
-                 String rankRoom, int numFloors) {
-        super(nameService, area, spend, numberPeople, styleEngage);
+    public House(String idService, String nameService, double area, int spend, int numberPeople, String styleEngage, String rankRoom, int numFloors) {
+        super(idService, nameService, area, spend, numberPeople, styleEngage);
         this.rankRoom = rankRoom;
         this.numFloors = numFloors;
     }
@@ -39,6 +38,11 @@ public class House extends Facility{
     public String toString() {
         return super.toString() +
                 "rankRoom='" + rankRoom + '\'' +
-                ", numFloors=" + numFloors ;
+                ", numFloors=" + numFloors +
+                '}';
     }
 }
+
+
+
+

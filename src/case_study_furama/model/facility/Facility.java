@@ -1,6 +1,7 @@
 package case_study_furama.model.facility;
 
 public abstract class Facility {
+    private String idService;
     private  String nameService;
     private  double area;
     private int spend;
@@ -11,13 +12,22 @@ public abstract class Facility {
     public Facility() {
     }
 
-    public Facility(String nameService, double area, int spend, int numberPeople, String styleEngage) {
+    public Facility(String idService, String nameService, double area, int spend, int numberPeople, String styleEngage) {
+        this.idService=idService;
         this.nameService = nameService;
         this.area = area;
         this.spend = spend;
         this.numberPeople = numberPeople;
         this.styleEngage = styleEngage;
 
+    }
+
+    public String getIdService() {
+        return idService;
+    }
+
+    public void setIdService(String idService) {
+        this.idService = idService;
     }
 
     public String getNameService() {
@@ -61,13 +71,14 @@ public abstract class Facility {
     }
 
 
-
     @Override
     public String toString() {
-        return "nameService='" + nameService + '\'' +
+        return  "idService='" + idService + '\'' +
+                ", nameService='" + nameService + '\'' +
                 ", area=" + area +
                 ", spend=" + spend +
                 ", numberPeople=" + numberPeople +
-                ", styleEngage='" + styleEngage + " ";
+                ", styleEngage='" + styleEngage + '\'' +
+                '}';
     }
 }

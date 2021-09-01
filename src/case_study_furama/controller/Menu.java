@@ -117,9 +117,9 @@ public class Menu {
                                 int choise3Display2;
                                 do{
                                 System.out.println(
-                                        " 1. add() Room"+
-                                        " 2.add() House"+
-                                        " 3. add() Vila"+
+                                        " 1. add() Room"+"\n"+
+                                        " 2.add() House"+"\n"+
+                                        " 3. add() Vila"+"\n"+
                                         "4. Exit");
                                 System.out.println(" moi chon dich vu them vao");
                                 choise3Display2 = Integer.parseInt(scanner.nextLine());

@@ -2,13 +2,13 @@ package ss17_io_binary_file.demo.manage_student.controller;
 
 
 import ss17_io_binary_file.demo.manage_student.service.IStudentService;
-import ss17_io_binary_file.demo.manage_student.service.impl.StudentService;
+
 
 import java.util.Scanner;
 
 public class MainController {
     Scanner scanner = new Scanner(System.in);
-    IStudentService studentService = new StudentService();
+//    IStudentService studentService = new StudentService();
 
     public void menu() {
         int choice;
@@ -20,10 +20,10 @@ public class MainController {
             choice = Integer.parseInt(scanner.nextLine());
             switch (choice){
                 case 1:
-                    studentService.addStudent();
+//                    studentService.addStudent();
                     break;
                 case 2:
-                    studentService.displayStudent();
+//                    studentService.displayStudent();
                     break;
                 case 3:
                     System.exit(0);

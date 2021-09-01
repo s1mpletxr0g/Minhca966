@@ -1,14 +1,22 @@
 package case_study_furama.service;
 
+import case_study_furama.common.WriteAndRead;
+import case_study_furama.model.person.Customer;
 import case_study_furama.model.person.Employee;
 import case_study_furama.service.impl.EmployeeService;
 
+import java.io.File;
 import java.util.ArrayList;
+import java.util.LinkedList;
 import java.util.List;
 import java.util.Scanner;
 
 public class EmployeeServiceImpl implements EmployeeService {
+    {
+        list = covertStringToEmployee();
+    }
    static List<Employee> list = new ArrayList<>();
+   public static final String FILE_NAME="F:\\up_git\\ca\\src\\case_study_furama\\data\\employee.CSV";
    static {
        list.add(new Employee("1", " minh ca", 1996, "nam", "206001637","0823202011","huynhminhca191"," dai hoc","quan ly",15000));
    }
@@ -104,5 +112,24 @@ public class EmployeeServiceImpl implements EmployeeService {
             System.out.println(employee.toString());
         }
 
+    }
+    public List<Employee> covertStringToEmployee() {
+        List<String> stringList = WriteAndRead.readFile(FILE_NAME);
+        List<Employee> employee1 = new LinkedList<>();
+        String[] arrEmployee;
+        for (String line : stringList) {
+            arrEmployee = line.split(",");
+            employee1.add(new Employee(arrEmployee[0], arrEmployee[1], Integer.parseInt(arrEmployee[2]),
+                    arrEmployee[3], arrEmployee[4], arrEmployee[5], arrEmployee[6],arrEmployee[7],arrEmployee[8],Integer.parseInt(arrEmployee[8])));
+        }
+
+        return employee1;
+    }
+    public List<String> Write() {
+        List<String> listString = new LinkedList<>();
+        for (Employee employee : list) {
+            listString.add(employee.toString());
+        }
+        return listString;
     }
 }
