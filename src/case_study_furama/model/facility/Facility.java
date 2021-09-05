@@ -79,6 +79,6 @@ public abstract class Facility {
                 ", spend=" + spend +
                 ", numberPeople=" + numberPeople +
                 ", styleEngage='" + styleEngage + '\'' +
-                '}';
+               " ";
     }
 }

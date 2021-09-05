@@ -6,17 +6,24 @@ import case_study_furama.model.facility.Room;
 import case_study_furama.model.facility.Vila;
 import case_study_furama.service.impl.FacilityService;
 
+import java.nio.file.attribute.UserPrincipal;
 import java.util.*;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
 public class FacilityServiceimpl implements FacilityService {
     String idService;
+    String nameService;
+    double area;
+    int spend;
+    int numberPeople;
+    String styleEngage;
+
     Scanner scanner = new Scanner(System.in);
     static Map<Room, Integer> mapRoom = new LinkedHashMap<>();
 
     static {
-        mapRoom.put(new Room("SVRO", "phong 1", 20.0, 500, 3, " ngay", "chich"), 1);
+        mapRoom.put(new Room("SVRO-0001", "phong 1", 20.0, 500, 3, " ngay", "chich"), 1);
     }
 
     @Override
@@ -35,19 +42,68 @@ public class FacilityServiceimpl implements FacilityService {
                 break;
             } catch (IllegalArgumentException e) {
                 System.err.println(" sai định dạng");
-                System.out.println(" moi nhap lai idService ");
             }
         }
-        System.out.println(" moi nhap ten dich vu");
-        String nameService = scanner.nextLine();
-        System.out.println(" moi nhap dien tich");
-        double area = Integer.parseInt(scanner.nextLine());
-        System.out.println(" moi nhap gia");
-        int spend = Integer.parseInt(scanner.nextLine());
-        System.out.println(" moi nhap so nguoi");
-        int numberPeople = Integer.parseInt(scanner.nextLine());
-        System.out.println(" moi nhap kieu thue");
-        String styleEngage = scanner.nextLine();
+        while (true) {
+            try {
+                System.out.println(" moi nhap ten dich vu");
+                 nameService = scanner.nextLine();
+                Pattern pattern = Pattern.compile("^[A-Z][a-z]{1,}$");
+                Matcher m = pattern.matcher(nameService);
+                if (!m.matches()) {
+                    throw new IllegalArgumentException();
+                }
+                break;
+            } catch (IllegalArgumentException e) {
+                System.err.println(" sai dinh dang");
+
+            }
+        }
+        while (true){
+            System.out.println(" moi nhap dien tich");
+            area = Integer.parseInt(scanner.nextLine());
+            if(area>30){
+                break;
+            }
+            System.out.println(" moi nhap lai dien tich Room");
+        }
+        while (true){
+            System.out.println(" moi nhap gia");
+            spend = Integer.parseInt(scanner.nextLine());
+            if (spend>0){
+                break;
+            }
+            System.err.println(" gia tien phai lon hon 0");
+        }
+        while (true){
+            System.out.println(" moi nhap so nguoi");
+            numberPeople = Integer.parseInt(scanner.nextLine());
+            if(numberPeople>0&&numberPeople<20){
+                break;
+            }
+            System.err.println(" so luong nguoi ngoai nguoi cho phep ");
+        }
+//        while (true){
+//            try {
+//                System.out.println(" moi nhap kieu thue");
+//                styleEngage = scanner.nextLine();
+//                Pattern pattern=Pattern.compile("^[A-z][a-z]{1,}");
+//                Matcher m= pattern.matcher(styleEngage);
+//                if(!m.matches()){
+//                    throw new IllegalArgumentException();
+//                }
+//
+//            }catch (IllegalArgumentException e){
+//                System.err.println(" nhap sai dinh dang");
+//
+//            }
+//        }
+
+
+
+
+
+
         System.out.println(" moi nhap dich vu mien phi");
         String freeService = scanner.nextLine();
         mapRoom.put(new Room(idService, nameService, area, spend, numberPeople, styleEngage, freeService), 1);
@@ -127,8 +183,21 @@ public class FacilityServiceimpl implements FacilityService {
                 System.out.println(" moi nhap lai idService ");
             }
         }
-        System.out.println(" moi nhap ten dich vu");
-        String nameService = scanner.nextLine();
+        while (true) {
+            try {
+                System.out.println(" moi nhap ten dich vu");
+                String nameService = scanner.nextLine();
+                Pattern pattern = Pattern.compile("^(A-Z)(a-z){1,}$");
+                Matcher m = pattern.matcher(nameService);
+                if (!m.matches()) {
+                    throw new IllegalArgumentException();
+                }
+                break;
+            } catch (IllegalArgumentException e) {
+                System.out.println(" sai dinh dang");
+            }
+        }
+
         System.out.println(" moi nhap dien tich");
         double area = Integer.parseInt(scanner.nextLine());
         System.out.println(" moi nhap gia");
@@ -206,7 +275,7 @@ public class FacilityServiceimpl implements FacilityService {
             try {
                 System.out.println(" moi nhap idService");
                 idService = scanner.nextLine();
-                Pattern pattern = Pattern.compile("^(SVVL-)(\\d){4}$");
+                Pattern pattern = Pattern.compile("^(SVVL-)(\\d){3}$");
                 Matcher m = pattern.matcher(idService);
                 if (!m.matches()) {
                     throw new IllegalArgumentException();
@@ -217,9 +286,25 @@ public class FacilityServiceimpl implements FacilityService {
                 System.out.println(" moi nhap lai idService ");
             }
         }
-        System.out.println(" moi nhap ten dich vu");
-        String nameService = scanner.nextLine();
-        Pattern pattern=Pattern.compile("^(A-Z)(a-z){40}$");
+        while (true) {
+            try {
+                System.out.println(" moi nhap ten dich vu");
+                String nameService = scanner.nextLine();
+                Pattern pattern = Pattern.compile("^(A-Z)(a-z){1,}$");
+                Matcher m = pattern.matcher(nameService);
+                if (!m.matches()) {
+                    throw new IllegalArgumentException();
+                }
+                break;
+
+
+            } catch (IllegalArgumentException e) {
+                System.out.println(" sai dinh dang");
+                System.out.println(" moi nhap lai nameService");
+
+            }
+        }
+
         System.out.println(" moi nhap dien tich");
         double area = Integer.parseInt(scanner.nextLine());
         System.out.println(" moi nhap gia");

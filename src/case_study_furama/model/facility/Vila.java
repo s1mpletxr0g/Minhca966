@@ -52,7 +52,6 @@ public class Vila extends Facility {
         return super.toString() +
                 "rankRoom='" + rankRoom + '\'' +
                 ", areaSwim=" + areaSwim +
-                ", numFloors=" + numFloors +
-                '}';
+                ", numFloors=" + numFloors +" ";
     }
 }

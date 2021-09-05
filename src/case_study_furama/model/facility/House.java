@@ -38,8 +38,7 @@ public class House extends Facility{
     public String toString() {
         return super.toString() +
                 "rankRoom='" + rankRoom + '\'' +
-                ", numFloors=" + numFloors +
-                '}';
+                ", numFloors=" + numFloors +" ";
     }
 }
 
