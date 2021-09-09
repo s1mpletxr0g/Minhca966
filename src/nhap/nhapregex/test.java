@@ -1,42 +1,16 @@
 package nhap.nhapregex;
 
-import java.util.ArrayList;
-import java.util.List;
 import java.util.Scanner;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
 public class test {
     public static void main(String[] args) {
-//        String nameService;
-//        Scanner scanner = new Scanner(System.in);
-//        String idService;
+        Scanner scanner= new Scanner(System.in);
+        String birthDay = scanner.nextLine();
+        Pattern pattern= Pattern.compile("^(0[1-9])|(12[0-9])|(3[01])/(0[1-9])|(1[0-2])/((19)[2-9][0-9])|((200)[1-4])$");
+        Matcher m= pattern.matcher(birthDay);
+        System.out.println(m.matches());
+    }
 
-//        while (true) {
-//            try {
-//                System.out.println(" moi nhap ten dich vu");
-//                nameService = scanner.nextLine();
-//                Pattern pattern = Pattern.compile("^[A-Z][a-z]{1,}$");
-//                Matcher m = pattern.matcher(nameService);
-//                System.out.println(m.matches());
-
-//                if (!m.matches()) {
-//                    throw new IllegalArgumentException();
-//                }
-//                System.out.println(m.matches());
-//                break;
-//            } catch (IllegalArgumentException e) {
-//                System.err.println(" sai dinh dang");
-//
-//            }
-//        }
-//    }
-        int []A={7,2,5,3,5,3} ;
-        int []B={7,2,5,4,6,3,5,3};
-        for(int i=0; i<A.length;i++){
-            for (int j=0; j<B.length;j++){
-                
-            }
-        }
-
-}}
+}

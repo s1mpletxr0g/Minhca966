@@ -9,58 +9,92 @@ import java.util.ArrayList;
 import java.util.LinkedList;
 import java.util.List;
 import java.util.Scanner;
+import java.util.regex.Pattern;
 
 public class CustomerServiceImpl implements CustomerService {
-     List<Customer> list= new LinkedList<>();
-    public static  final  String FILE_NAME = "case_study_furama\\data\\customer.csv";
-{
-    list = covertStringToEmployee();
-}
 
+    public  final  String FiLe="F:\\up_git\\ca\\src\\case_study_furama\\data\\customer.csv";
+    static List<Customer> listCustomer=new LinkedList<>();
+    Scanner scanner = new Scanner(System.in);
+    String id;
+    String name;
+    String birthDay;
+    String gender;
+    String idCard;
+    String phone;
+    String mail;
+    String rankCustomer;
+    String address;
 
     @Override
     public void add() {
-        Scanner scanner = new Scanner(System.in);
-        List<String> stringList = new ArrayList<>();
-        System.out.println(" moi nhap id nhan vien");
-        String id = scanner.nextLine();
-        System.out.println(" moi nhap ten nhan vien");
-        String name = scanner.nextLine();
-        System.out.println(" moi nhap ngay sinh nhan vien");
-        int birthDay = Integer.parseInt(scanner.nextLine());
+        while (true){
+            try {
+                System.out.println(" moi nhap id nhan vien");
+                id = scanner.nextLine();
+                break;
+            }catch (Exception e){
+                System.err.println(" định dạn id nhập vào không đúng");
+            }
+        }
+        while (true){
+            try{
+                System.out.println(" moi nhap ten nhan vien");
+                name = scanner.nextLine();
+                break;
+            }catch (Exception e){
+                System.err.println(" dinh dang ten nhap vao khong dung");
+            }
+        }
+        while (true){
+            try{
+                System.out.println(" moi nhap ngay sinh nhan vien");
+               String birthDay = scanner.nextLine();
+               Pattern pattern= Pattern.compile("^(0[1-9]|12[0-9]|3[01])/(0[1-9]|1[0-2])/[1921-2004]$");
+               break;
+            }catch (Exception e){
+                System.out.println("");
+            }
+        }
+
+
+
         System.out.println(" moi nhap gioi tinh");
-        String gender = scanner.nextLine();
+         gender = scanner.nextLine();
         System.out.println(" moi nhap cmnd");
-        String idCard = scanner.nextLine();
+        idCard = scanner.nextLine();
         System.out.println(" moi nhap phone");
-        String phone = scanner.nextLine();
+        phone = scanner.nextLine();
         System.out.println("moi nhap gmail");
-        String mail = scanner.nextLine();
+        mail = scanner.nextLine();
         System.out.println(" moi nhap loai khach hang");
-        String rankCustomer=scanner.nextLine();
+        rankCustomer = scanner.nextLine();
         System.out.println(" moi nhap dia chi khach hang ");
-        String address=scanner.nextLine();
-        Customer customer= new Customer(id, name, birthDay, gender, idCard,phone, mail,rankCustomer,address);
-        list.add(customer);
+        address = scanner.nextLine();
+        Customer customer = new Customer(id, name, birthDay, gender, idCard, phone, mail, rankCustomer, address);
+        listCustomer.add(customer);
+        List<String> listString= new LinkedList<>();
 
-
-        stringList.add(customer.toString());
-        WriteAndRead.writeFile(FILE_NAME, stringList, true);
+        listString.add(customer.toString());
+//        listString.add(customer.getId()+","+customer.getName()+","+customer.getGender()+","+ customer.getIdCard()+","
+//        +customer.getPhone()+","+customer.getMail()+","+customer.getRankCustomer()+","+customer.getAddress());
+//neu toString lop cha chua dung fomar thi ghi ra chi tiet;
+        WriteAndRead.writeFile(FiLe,listString,true);
     }
-
     @Override
     public void edit() {
         Scanner scanner = new Scanner(System.in);
         System.out.println(" moi nhap vao id muon edit ");
-        String id= scanner.nextLine();
-        for( int i=0; i<list.size(); i++){
-            if(list.get(i).getId().contains(id)){
+        String id = scanner.nextLine();
+        for (int i = 0; i < listCustomer.size(); i++) {
+            if (listCustomer.get(i).getId().contains(id)) {
+
                 System.out.println(" moi nhap id nhan vien");
-                 id = scanner.nextLine();
+                id = scanner.nextLine();
                 System.out.println(" moi nhap ten nhan vien");
                 String name = scanner.nextLine();
                 System.out.println(" moi nhap ngay sinh nhan vien");
-                int birthDay = Integer.parseInt(scanner.nextLine());
+                String birthDay = scanner.nextLine();
                 System.out.println(" moi nhap gioi tinh");
                 String gender = scanner.nextLine();
                 System.out.println(" moi nhap cmnd");
@@ -70,22 +104,20 @@ public class CustomerServiceImpl implements CustomerService {
                 System.out.println("moi nhap gmail");
                 String mail = scanner.nextLine();
                 System.out.println(" moi nhap loai khach hang");
-                String rankCustomer=scanner.nextLine();
+                String rankCustomer = scanner.nextLine();
                 System.out.println(" moi nhap dia chi khach hang ");
-                String address=scanner.nextLine();
-                list.get(i).setId(id);
-                list.get(i).setName(name);
-                list.get(i).setBirthday(birthDay);
-                list.get(i).setGender(gender);
-                list.get(i).setIdCard(idCard);
-                list.get(i).setPhone(phone);
-                list.get(i).setMail(mail);
-                list.get(i).setRankCustomer(rankCustomer);
-                list.get(i).setAddress(address);
+                String address = scanner.nextLine();
+                listCustomer.get(i).setId(id);
+                listCustomer.get(i).setName(name);
+                listCustomer.get(i).setBirthday(birthDay);
+                listCustomer.get(i).setGender(gender);
+                listCustomer.get(i).setIdCard(idCard);
+                listCustomer.get(i).setPhone(phone);
+                listCustomer.get(i).setMail(mail);
+                listCustomer.get(i).setRankCustomer(rankCustomer);
+                listCustomer.get(i).setAddress(address);
 
 
-                List<String> stringList = covertEmployeeToString();
-                WriteAndRead.writeFile(FILE_NAME, stringList, false);
             }
         }
 
@@ -93,12 +125,12 @@ public class CustomerServiceImpl implements CustomerService {
 
     @Override
     public void remote() {
-        Scanner scanner= new Scanner(System.in);
+        Scanner scanner = new Scanner(System.in);
         System.out.println(" moi nhap id nhan vien muon delete");
-        String id= scanner.nextLine();
-        for(int i=0; i<list.size(); i++){
-            if(list.get(i).getId().toLowerCase().contains(id)){
-                list.remove(i);
+        String id = scanner.nextLine();
+        for (int i = 0; i < listCustomer.size(); i++) {
+            if (listCustomer.get(i).getId().toLowerCase().contains(id)) {
+                listCustomer.remove(i);
             }
         }
 
@@ -106,31 +138,29 @@ public class CustomerServiceImpl implements CustomerService {
 
     @Override
     public void display() {
-        for( Customer customer: list){
-            System.out.println(customer.toString());
+        for (Customer customer : listCustomer) {
+            System.out.println(customer);
         }
 
     }
 
-
-    public List<Customer> covertStringToEmployee() {
-        List<String> stringList = WriteAndRead.readFile(FILE_NAME);
-        List<Customer> customers1 = new LinkedList<>();
-        String[] arrCustomer;
-        for (String line : stringList) {
-            arrCustomer = line.split(",");
-            customers1.add(new Customer(arrCustomer[0], arrCustomer[1], Integer.parseInt(arrCustomer[2]),
-                    arrCustomer[3], arrCustomer[4], arrCustomer[5], arrCustomer[6],arrCustomer[7],arrCustomer[8]));
+    public List<Customer> readlistCustomer(){
+        List<String> listString = WriteAndRead.readFile(FiLe);
+        List<Customer> listCustomer = new LinkedList<>();
+        String [] customer ;
+        for (String a : listString) {
+            customer = a.split(",");
+            listCustomer.add(new Customer(customer[0],customer[1],customer[2],customer[3],
+                    customer[4],customer[5],customer[6],customer[7],customer[8]));
         }
+        return listCustomer;
 
-        return customers1;
     }
 
-    public List<String> covertEmployeeToString() {
-        List<String> listString = new LinkedList<>();
-        for (Customer customer : list) {
-            listString.add(customer.toString());
-        }
-        return listString;
-    }
 }
+
+
+
+
+
+

@@ -9,7 +9,7 @@ public class Customer extends Person{
 
 
 
-    public Customer(String id, String name, int birthday, String gender,
+    public Customer(String id, String name, String birthday, String gender,
                     String idCard, String phone, String mail, String rankCustomer, String address) {
         super(id, name, birthday, gender, idCard, phone, mail);
         this.rankCustomer = rankCustomer;
@@ -34,6 +34,6 @@ public class Customer extends Person{
 
     @Override
     public String toString() {
-        return  super.toString()+ rankCustomer + '\'' + address;
+        return  super.toString()+ " , rankCustomer "+rankCustomer + " , address " + address ;
     }
 }

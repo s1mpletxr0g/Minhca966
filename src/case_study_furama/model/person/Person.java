@@ -3,7 +3,7 @@ package case_study_furama.model.person;
 public abstract class Person {
     private String id;
     private String name;
-    private int birthday;
+    private String birthday;
     private  String gender;
     private  String idCard;
     private String phone;
@@ -12,7 +12,7 @@ public abstract class Person {
     public Person() {
     }
 
-    public Person(String id, String name, int birthday, String gender, String idCard, String phone, String mail) {
+    public Person(String id, String name, String birthday, String gender, String idCard, String phone, String mail) {
         this.id = id;
         this.name = name;
         this.birthday = birthday;
@@ -38,11 +38,11 @@ public abstract class Person {
         this.name = name;
     }
 
-    public int getBirthday() {
+    public String getBirthday() {
         return birthday;
     }
 
-    public void setBirthday(int birthday) {
+    public void setBirthday(String birthday) {
         this.birthday = birthday;
     }
 
@@ -80,6 +80,6 @@ public abstract class Person {
 
     @Override
     public String toString() {
-        return  id + name + '\'' + birthday + gender + '\'' +phone + '\'' + mail + '\'';
+        return " id " +id +" , name " +name + " , birthday " + birthday +" ,gender "+ gender + " ,phone" +phone + " ,mail "+ mail ;
     }
 }

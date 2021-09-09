@@ -1,8 +1,8 @@
 package case_study_furama.controller;
 
-import case_study_furama.service.CustomerServiceImpl;
-import case_study_furama.service.EmployeeServiceImpl;
-import case_study_furama.service.FacilityServiceimpl;
+import case_study_furama.model.booking.Booking;
+import case_study_furama.service.*;
+import case_study_furama.service.impl.BookingService;
 
 import java.util.Scanner;
 
@@ -11,6 +11,8 @@ public class Menu {
         FacilityServiceimpl facilityServiceimpl = new FacilityServiceimpl();
         CustomerServiceImpl customerService= new CustomerServiceImpl();
         EmployeeServiceImpl employeeService= new EmployeeServiceImpl();
+        BookingServiceImpl bookingService= new BookingServiceImpl();
+        ContractsServiceImpl contractsService= new ContractsServiceImpl();
 
         int choise;
         do {
@@ -31,7 +33,8 @@ public class Menu {
                                 "1\tDisplay list employees\n" +
                                 "2\tAdd new employee\n" +
                                 "3\tEdit employee\n" +
-                                "4\tReturn main menu\n");
+                                "4\t readFile employee\n"+
+                                "5\tReturn main menu\n");
                         choise1 = Integer.parseInt(scanner.nextLine());
                         switch (choise1) {
                             case 1:
@@ -46,8 +49,9 @@ public class Menu {
                                 System.out.println("3\tEdit employee\n");
                                 employeeService.edit();
                                 break;
+
                         }
-                    } while (choise1 != 4);
+                    } while (choise1 != 5);
                     break;
                 case 2:
                     int choise2;
@@ -56,7 +60,8 @@ public class Menu {
                                 "1.\tDisplay list customers\n" +
                                         "2.\tAdd new customer\n" +
                                         "3.\tEdit customer\n" +
-                                        "4.\tReturn main menu\n");
+                                        "4.\t read file Customer\n" +
+                                        "5.\tReturn main menu\n");
                         choise2 = Integer.parseInt(scanner.nextLine());
                         switch (choise2) {
                             case 1:
@@ -71,8 +76,11 @@ public class Menu {
                                 System.out.println("3.\tEdit customer\n");
                                 customerService.edit();
                                 break;
+                            case 4:
+                                customerService.readlistCustomer();
+                                break;
                         }
-                    } while (choise2 != 4);
+                    } while (choise2 != 5);
                     break;
                 case 3:
                     int choise3;
@@ -147,7 +155,7 @@ public class Menu {
                     int choise4;
                     do {
                         System.out.println(
-                                "1.\tAdd new booking\n" +
+                                        "1.\tAdd new booking\n" +
                                         "2.\tDisplay list booking\n" +
                                         "3.\tCreate new constracts\n" +
                                         "4.\tDisplay list contracts\n" +
@@ -157,18 +165,23 @@ public class Menu {
                         switch (choise4) {
                             case 1:
                                 System.out.println("\"1.\\tAdd new booking\\n\"");
+                                bookingService.add();
                                 break;
                             case 2:
                                 System.out.println("2.\tDisplay list booking\n");
+                                bookingService.display();
                                 break;
                             case 3:
                                 System.out.println("3.\tCreate new constracts\n");
+                                contractsService.add();
                                 break;
                             case 4:
                                 System.out.println("4.\tDisplay list contracts\n");
+                                contractsService.display();
                                 break;
                             case 5:
                                 System.out.println("5.\tEdit contracts\n");
+                                contractsService.edit();
                                 break;
                         }
                     } while (choise4 != 6);
