@@ -1,5 +1,7 @@
 package case_study_furama.common;
 
+import case_study_furama.model.contacts.Contracts;
+
 import java.io.*;
 import java.util.ArrayList;
 import java.util.List;
@@ -55,6 +57,14 @@ public class WriteAndRead {
             }
         }
 
+        return stringList;
+    }
+    //phuong thuc chuyen doi doi tuong sang string de update
+    public List<String> convertListToString(List<Contracts> contractsList) {
+        List<String> stringList = new ArrayList<>();
+        for (Contracts contracts : contractsList) {
+            stringList.add(contracts.toString());
+        }
         return stringList;
     }
 

@@ -2,6 +2,7 @@ package case_study_furama.service;
 
 import case_study_furama.common.WriteAndRead;
 import case_study_furama.model.booking.Booking;
+import case_study_furama.model.contacts.Contracts;
 import case_study_furama.service.impl.BookingService;
 
 import java.sql.SQLOutput;
@@ -65,9 +66,17 @@ public class BookingServiceImpl extends Booking implements BookingService {
                 listBK.get(i).setNameService(nameService);
                 listBK.get(i).setTypeService(typeService);
 
+                WriteAndRead.writeFile(FileBooking,convertListToString(listBK),false);
             }
         }
 
+    }
+    public List<String> convertListToString(List<Booking> bookingList) {
+        List<String> stringList = new ArrayList<>();
+        for (Booking booking : bookingList) {
+            stringList.add(booking.toString());
+        }
+        return stringList;
     }
 
     @Override
